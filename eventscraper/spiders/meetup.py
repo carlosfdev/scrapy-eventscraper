@@ -21,7 +21,7 @@ class MeetupSpider(CrawlSpider):
 
     @staticmethod
     def parse_details(response):
-        event = copy.deepcopy(response.meta['event'])
+        event = response.meta['event']
         event['host'] = response.xpath('//div[contains(@class, "event-info-hosts-text")]/a/span/span/span/text()').extract_first()
         event['place'] = response.xpath('//address/p/text()').extract()[0]
         event['address'] = response.xpath('//address/p/text()').extract()[1]
