@@ -1,15 +1,22 @@
-### Instalación
+#### Instalación
 
 Probado en un venv con Python 3.6
 
 `pip install -r requirements.txt`
 
-### Uso
+#### Uso
+
+[Scrapy Docs](https://doc.scrapy.org/en/latest/)
+
+#####Lanzamiento de spiders
+
+`scrapy crawl {spider_name} -o {json_path}`
+
+Siendo `spider_name` el nombre de la araña y `json_path` el JSON en el que se va a
+volcar el scrapeo. 
+Scrapy escribe al final del fichero por lo que en sucesivas
+ejecuciones habría que borrar el JSON si ya existe.
+
+Ejemplo de uso
 
 `scrapy crawl meetup -o output/meetup.json`
-
-Escribe el output en el json, si ya estaba creado sigue
-escribiendo al final del fichero, por lo que habría que borrarlo antes,
-para sucesivas ejecuciones se puede utilizar el siguiente comando
-
-`rm output/meetup.json && scrapy crawl meetup -o output/meetup.json`
