@@ -1,5 +1,5 @@
 venv
 .vscode
 .idea
-meetup.json
+output/
 __pycache__
