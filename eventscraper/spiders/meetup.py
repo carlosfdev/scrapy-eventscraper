@@ -1,4 +1,3 @@
-import copy
 import scrapy
 from scrapy.spiders import CrawlSpider
 from eventscraper.items import Event
@@ -23,6 +22,8 @@ class MeetupSpider(CrawlSpider):
     def parse_details(response):
         event = response.meta['event']
         event['host'] = response.xpath('//div[contains(@class, "event-info-hosts-text")]/a/span/span/span/text()').extract_first()
-        event['place'] = response.xpath('//address/p/text()').extract()[0]
-        event['address'] = response.xpath('//address/p/text()').extract()[1]
+        location = response.xpath('//address/p/text()').extract()
+        event['place'] = location[0]
+        event['address'] = location[1]
+
         yield event
