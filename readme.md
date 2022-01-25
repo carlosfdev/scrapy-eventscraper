@@ -1,22 +1,20 @@
-#### Instalación
+## Scrapy Event Scraper
+Event scraper using Scrapy python library for an open source project
 
-Probado en un venv con Python 3.6
+#### Requirements
+
+Python 3.6
 
 `pip install -r requirements.txt`
 
-#### Uso
+#### Usage
 
 [Scrapy Docs](https://doc.scrapy.org/en/latest/)
 
-##### Lanzamiento de spiders
+##### Spiders execution
 
 `scrapy crawl {spider_name} -o {json_path}`
 
-Siendo `spider_name` el nombre de la araña y `json_path` el JSON en el que se va a
-volcar el scrapeo. 
-Scrapy escribe al final del fichero por lo que en sucesivas
-ejecuciones habría que borrar el JSON si ya existe.
-
-Ejemplo de uso
+##### Example
 
 `scrapy crawl meetup -o output/meetup.json`
